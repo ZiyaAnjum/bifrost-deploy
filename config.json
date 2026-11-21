@@ -1,4 +1,17 @@
 {
+  "client": {
+    "initial_pool_size": 10,
+    "enable_logging": false
+  },
+  "logs_store": {
+    "enabled": false
+  },
+  "framework": {
+    "pricing": {
+      "live_models_sync_interval": 0,
+      "mcp_library_sync_interval": 0
+    }
+  },
   "providers": {
     "gemini": {
       "keys": [
@@ -46,4 +59,3 @@
     ]
   }
 }
-

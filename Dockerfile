@@ -1,4 +1,4 @@
-FROM maximhq/bifrost:latest
+FROM maximhq/bifrost:v2.6.0
 
 # Switch to root to place config and set permissions
 USER root
@@ -22,3 +22,5 @@ ENV APP_DIR=/app/data
 ENV LOG_LEVEL=info
 ENV LOG_STYLE=json
 
+# Keep the Go heap under Render free tier's 512 MB (about 80%)
+ENV GOMEMLIMIT=400MiB
