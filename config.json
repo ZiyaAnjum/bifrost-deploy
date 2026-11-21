@@ -6,6 +6,9 @@
   "logs_store": {
     "enabled": false
   },
+  "config_store": 
+  { "enabled": false 
+  },
   "framework": {
     "pricing": {
       "live_models_sync_interval": 0,
