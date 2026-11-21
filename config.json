@@ -1,0 +1,49 @@
+{
+  "providers": {
+    "gemini": {
+      "keys": [
+        {
+          "name": "gemini-primary",
+          "value": "env.GEMINI_API_KEY",
+          "models": ["*"],
+          "weight": 1.0
+        }
+      ]
+    },
+    "groq": {
+      "keys": [
+        {
+          "name": "groq-primary",
+          "value": "env.GROQ_API_KEY",
+          "models": ["*"],
+          "weight": 1.0
+        }
+      ]
+    }
+  },
+  "governance": {
+    "virtual_keys": [
+      {
+        "id": "vk-truthsync",
+        "name": "truthsync-dev",
+        "description": "TruthSync dev backend virtual key",
+        "value": "env.BIFROST_VK",
+        "is_active": true,
+        "allow_all_providers": false,
+        "provider_configs": [
+          {
+            "provider": "gemini",
+            "allowed_models": ["*"],
+            "weight": 1.0
+          },
+          {
+            "provider": "groq",
+            "allowed_models": ["*"],
+            "weight": 1.0
+          }
+        ]
+      }
+    ]
+  }
+}
+
